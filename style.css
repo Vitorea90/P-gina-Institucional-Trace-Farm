@@ -753,8 +753,62 @@ section {
 }
 
 @media (max-width: 600px) {
+    .timeline {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        position: relative;
+        padding-left: var(--spacing-xs);
+    }
+
+    /* Vertical Line */
+    .timeline::before {
+        content: '';
+        position: absolute;
+        top: 20px;
+        bottom: 20px;
+        left: 38px;
+        /* Center of the 60px icon + padding adjustment */
+        width: 2px;
+        background: #E5E7EB;
+        z-index: 0;
+    }
+
     .timeline-item {
-        flex: 0 0 100%;
+        flex: 0 0 auto;
+        width: 100%;
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+        margin-bottom: var(--spacing-lg);
+        padding-left: 0;
+    }
+
+    .timeline-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .timeline-icon {
+        margin-bottom: 0;
+        margin-right: var(--spacing-md);
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        flex-shrink: 0;
+        z-index: 1;
+        box-shadow: var(--shadow-sm);
+        /* Consistent shadow */
+        border: 4px solid var(--bg-light-sec);
+        /* Gap effect around line */
+    }
+
+    .timeline-content {
+        padding-top: var(--spacing-xs);
+        padding-left: 0;
+    }
+
+    .timeline-content p {
+        padding-left: 0;
     }
 }
 
