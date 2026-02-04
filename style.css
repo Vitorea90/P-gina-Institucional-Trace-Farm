@@ -754,6 +754,19 @@ section {
     border: 3px solid var(--accent);
 }
 
+.validation-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.validation-link:hover .validation-highlight {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
 .validation-badge {
     font-size: 4rem;
     margin-bottom: var(--spacing-md);
